@@ -1,3 +1,87 @@
 @import "normalize";
 @import "variables";
-@import "layout";
+
+* {
+  box-sizing: border-box;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-stack);
+  line-height: var(--line-height);
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--heading-line-height);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 calc(2 * var(--space));
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  padding: 0 calc(2 * var(--space));
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0 calc(2 * var(--space));
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+
+  &__link:not(:last-of-type) {
+    margin-right: var(--space);
+  }
+}
