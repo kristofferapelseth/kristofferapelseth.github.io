@@ -1,5 +1,27 @@
 @import "normalize";
 @import "variables";
+@import "typography";
+
+:root {
+  font-size: $base-font-size;
+
+  --foreground: #333;
+  --background: #fff;
+
+  @media (prefers-color-scheme: dark) {
+    --foreground: #f5f5f5;
+    --background: #222;
+  }
+
+  @media (prefers-color-scheme: light) {
+    --foreground: #333;
+    --background: #fff;
+  }
+
+  @media #{$sm} {
+    font-size: $base-font-size-sm;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -29,42 +51,15 @@ body {
   min-height: 100%;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-stack);
-  line-height: var(--line-height);
+  font-family: $font-stack;
+  line-height: $line-height;
   font-size: 1rem;
-}
-
-a {
-  color: inherit;
-
-  &:visited {
-    color: inherit;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--heading-line-height);
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 calc(2 * var(--space));
 }
 
 .container {
   width: 100%;
-  max-width: var(--container-width);
-  padding: 0 calc(2 * var(--space));
+  max-width: $container-width;
+  padding: 0 $space;
   margin: 0 auto;
 }
 
@@ -74,7 +69,8 @@ h6 {
   align-items: center;
   justify-content: center;
   flex: 1;
-  padding: 0 calc(2 * var(--space));
+  padding: 0 $space;
+  font-size: $h5-size;
 }
 
 .nav {
@@ -82,6 +78,6 @@ h6 {
   flex-direction: row;
 
   &__link:not(:last-of-type) {
-    margin-right: var(--space);
+    margin-right: $space;
   }
 }
