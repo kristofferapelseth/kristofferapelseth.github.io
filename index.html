@@ -3,14 +3,14 @@ layout: default
 title: Kristoffer Apelseth Liadal
 ---
 
-<header class="header">
-  <h1 class="header__title">{{ site.title }}</h1>
+<header class="frontpage-header">
+  <h1 class="frontpage-header__title">{{ site.title }}</h1>
   <nav class="nav">
     {% for link in site.data.nav %}
     <a class="nav__link" href="{{ link.url }}">{{ link.label }}</a>
     {% endfor %}
   </nav>
-  <div class="header__image"></div>
+  <div class="frontpage-header__image"></div>
 </header>
 
 <script>

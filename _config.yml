@@ -26,6 +26,11 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "apelseth.me"
 
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
 # Build settings
 sass:
   sass_dir: _sass

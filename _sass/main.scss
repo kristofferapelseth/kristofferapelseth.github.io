@@ -63,9 +63,14 @@ body {
   max-width: $container-width;
   padding: 0 $space;
   margin: 0 auto;
+
+  @media #{$sm} {
+    padding: 0 2 * $space;
+  }
 }
 
-.header {
+.frontpage-header {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +113,10 @@ body {
     pointer-events: none;
     z-index: 1;
   }
+
+  @media #{$sm} {
+    padding: 0 2 * $space;
+  }
 }
 
 .nav {
@@ -117,4 +126,16 @@ body {
   &__link:not(:last-of-type) {
     margin-right: $space;
   }
+}
+
+.page-header {
+  margin: 4 * $space 0 2 * $space;
+
+  @media #{$md} {
+    margin-top: 8 * $space;
+  }
+}
+
+.grid {
+  display: grid;
 }
