@@ -10,4 +10,15 @@ title: Kristoffer Apelseth Liadal
     <a class="nav__link" href="{{ link.url }}">{{ link.label }}</a>
     {% endfor %}
   </nav>
+  <div class="header__image"></div>
 </header>
+
+<script>
+  const root = document.documentElement;
+  const images = ["header1.jpg", "header2.jpg", "header3.jpg"];
+
+  root.style.setProperty(
+    "--header-image",
+    `url('../images/${images[Math.floor(Math.random() * images.length)]}')`
+  );
+</script>
